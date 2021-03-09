@@ -25,7 +25,7 @@ let closeTask;
 while (true){
     
     if (displayTasks === "TASKS"){
-        displayTasks = alert(`${newTasks}`);
+        tasks = alert(`${newTasks}`);
         displayTasks = true;
     } else if (displayTasks === "NEW"){
         newTask = prompt(`Please enter a new task:`);
@@ -33,7 +33,7 @@ while (true){
         newTask++;
         displayTasks = true;       
     } else if (displayTasks === "REMOVE"){
-        removeTask = prompt(`Which task should you remove?:`);
+        removeTask = prompt(`Which task should you remove?: \n ${tasks}`);
         removeTask = alert(`${removeTask} has been removed.`);
         removeTask--;
         displayTasks = true;
@@ -41,7 +41,8 @@ while (true){
         alert(`Thank you for using the Task Manager`);
         break;
     } else {
-        displayTasks = prompt(`TASK MANAGER \n
+        displayTasks = prompt(
+        `TASK MANAGER \n
         What would you like to do (Please enter one of the options below): 
         "TASKS" - Display All Tasks
         "NEW" - Add A New Task
