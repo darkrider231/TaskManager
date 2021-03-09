@@ -13,35 +13,39 @@ What would you like to do (Please enter one of the options below):
 "CLOSE" - Close The Task Manager\n`);
 
 // Shows tasks
-let tasks = "TASKS";
+let tasks;
 // Create a new task
-let newTask = "NEW";
+let newTask;
 // Remove a task
-let removeTask = "REMOVE";
+let removeTask;
 // Close the task manager
-let closeTask = "CLOSE";
+let closeTask;
 
 // Getting the user's input
 while (true){
     
-    if (displayTasks == tasks){
-        displayTasks = alert(`${tasks}`);
-        break;
-    } else if (displayTasks === newTask){
+    if (displayTasks === "TASKS"){
+        displayTasks = alert(`${newTasks}`);
+        displayTasks = true;
+    } else if (displayTasks === "NEW"){
         newTask = prompt(`Please enter a new task:`);
         newTask = alert(`${newTask} has been added!`);
         newTask++;
-        break;
-    } else if (displayTasks === removeTask){
+        displayTasks = true;       
+    } else if (displayTasks === "REMOVE"){
         removeTask = prompt(`Which task should you remove?:`);
         removeTask = alert(`${removeTask} has been removed.`);
         removeTask--;
-        break;
-    } else if  (displayTasks === closeTask){
+        displayTasks = true;
+    } else if  (displayTasks === "CLOSE"){
         alert(`Thank you for using the Task Manager`);
-        displayTasks = false;
         break;
     } else {
-        displayTasks = true;
+        displayTasks = prompt(`TASK MANAGER \n
+        What would you like to do (Please enter one of the options below): 
+        "TASKS" - Display All Tasks
+        "NEW" - Add A New Task
+        "REMOVE" - Remove A Task
+        "CLOSE" - Close The Task Manager\n`);
     }
 } 
